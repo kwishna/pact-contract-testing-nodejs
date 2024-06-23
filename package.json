@@ -1,0 +1,30 @@
+{
+  "name": "pact-contract-testing-nodejs",
+  "version": "1.0.0",
+  "description": "Pact based API contract testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "start-product": "node product-service/productService.js",
+    "start-order": "node order-service/orderService.js",
+    "test-consumer": "mocha order-service/tests/consumerPact.spec.mjs",
+    "test-provider": "mocha product-service/tests/providerPact.spec.mjs",
+    "publish-pacts": "node publishPacts.js"
+  },
+  "keywords": [
+    "pact",
+    "contract-testing"
+  ],
+  "author": "Krishna",
+  "license": "ISC",
+  "dependencies": {
+    "@pact-foundation/pact": "^13.0.0",
+    "@pact-foundation/pact-node": "^10.18.0",
+    "@pact-foundation/pact-provider-verifier": "^1.4.3",
+    "axios": "^1.7.2",
+    "chai": "^5.1.1",
+    "express": "^4.19.2",
+    "mocha": "^10.4.0",
+    "start-order": "^1.0.0"
+  }
+}

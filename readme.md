@@ -9,7 +9,6 @@ This command starts the Pact Broker in a Docker container, accessible at http://
     docker-compose up -d
 ```
 
-
 ```plaintext
     ecommerce/
     ├── product-service/
@@ -26,6 +25,11 @@ This command starts the Pact Broker in a Docker container, accessible at http://
     └── pacts/
 ```
 
+This command starts the order service on port 8080.
+```bash
+    node order-service/orderService.js
+```
+
 This command starts the product service on port 8081.
 ```bash
     node product-service/productService.js
@@ -36,7 +40,7 @@ This command runs the consumer tests, generating Pact files based on the interac
     mocha order-service/test/consumerPactTest.js
 ```
 
-This command publishes the generated Pact files to the Pact Broker.
+This command publishes the generated Pact files to the Pact Broker. [If using broker server]
 ```bash
     node publishPacts.js
 ```
